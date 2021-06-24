@@ -1,0 +1,349 @@
+
+<!DOCTYPE html><html lang="vi-VN" dir="ltr">
+
+    <head nonce="c13e3efb979747e58d888a8baacc9f8f">
+        <title>Digit recognition</title>
+
+        <meta charSet="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5"/>
+        <meta property="og:title" content="Digit recognition"/>
+        <meta name="twitter:title" content="Digit recognition"/>
+        <meta name="next-head-count" content="25"/>
+
+        <link nonce="c13e3efb979747e58d888a8baacc9f8f" rel="stylesheet" href="https://www-growth.scdn.co/_next/static/css/812fac6f43ce449cad05.css" data-n-p=""/>
+
+        <!-- Add icon library -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            .btn {
+                background-color: DodgerBlue;
+                border: none;
+                color: white;
+                padding: 12px 16px;
+                font-size: 16px;
+                cursor: pointer;
+            }
+
+            /* Darker background on mouse-over */
+            .btn:hover {
+            background-color: RoyalBlue;
+            }
+        </style>
+
+        <style data-styled="" data-styled-version="5.2.1">
+        
+        
+            .kKvTd
+            {
+                box-sizing:border-box;
+                font-family:spotify-circular,Helvetica,Arial,sans-serif;
+                -webkit-tap-highlight-color:transparent;
+                display:block;
+                padding:0 0 1em;margin-top:0;
+                margin-bottom:0;
+                font-size:24px;
+                font-weight:700;
+                -webkit-letter-spacing:-1.75px;
+                -moz-letter-spacing:-1.75px;
+                -ms-letter-spacing:-1.75px;
+                letter-spacing:-1.75px;
+                line-height:34px;
+                padding-bottom:0.67em;
+                color:var(--text-bright-accent,#117a37);
+            }
+
+            form {
+                width:100%;
+                height:650 px;
+                margin:auto;
+                position:relative;
+            }
+            input {
+                width: 50%;
+                height: 30px;
+            }
+            choice {
+                width: 30%;
+                height: 30px;
+            }
+
+            @media (min-width:700px)
+            {
+                .kKvTd
+                {
+                    font-size:56px;
+                    line-height:64px;
+                    -webkit-letter-spacing:-2px;
+                    -moz-letter-spacing:-2px;
+                    -ms-letter-spacing:-2px;
+                    letter-spacing:-2px;
+                }
+            }
+            
+
+            .jOucII
+            {
+                box-sizing:border-box;
+                font-family:spotify-circular,Helvetica,Arial,sans-serif;
+                -webkit-tap-highlight-color:transparent;
+                display:block;
+                padding:0 0 1em;
+                margin-top:0;
+                margin-bottom:0;
+                font-size:16px;
+                font-weight:300;
+                line-height:24px;
+                -webkit-letter-spacing:0px;
+                -moz-letter-spacing:0px;
+                -ms-letter-spacing:0px;
+                letter-spacing:0px;
+                color:var(--text-bright-accent,#117a37);
+            }
+            
+            data-styled.g6[id="Type__TypeElement-sc-9snywk-0"]{content:"kKvTd,jOucII,"}
+            
+            
+            .hJWOAl
+            {
+                --background-base:#1ED760 !important;
+                --background-highlight:#2DE26D !important;
+                --background-press:#43E57D !important;
+                --background-elevated:#1ED760 !important;
+                --background-tinted:#1ED760 !important;
+                --background-unsafe-for-small-text:#1ED760 !important;
+                --text-base:#2941AB !important;
+                --text-subdued:#2941AB !important;
+                --text-bright-accent:#2941AB !important;
+                --text-negative:#2941AB !important;
+                --text-warning:#2941AB !important;
+                --text-positive:#2941AB !important;
+                --text-announcement:#2941AB !important;
+                --essential-base:#2941AB !important;
+                --essential-subdued:#2941AB !important;
+                --essential-bright-accent:#2941AB !important;
+                --essential-negative:#2941AB !important;
+                --essential-warning:#2941AB !important;
+                --essential-positive:#2941AB !important;
+                --essential-announcement:#2941AB !important;
+                --decorative-base:#2941AB !important;--decorative-subdued:#2941AB !important;background-color:var(--background-base,#1ed760);color:var(--text-base,#000000);border-radius:500px;font-size:inherit;padding:14px 32px;}
+            data-styled.g30[id="ButtonInner-peijbp-0"]{content:"hJWOAl,"}/*!sc*/
+            
+            
+
+            *{box-sizing:border-box;}/*!sc*/
+            *::before,*::after{box-sizing:border-box;}/*!sc*/
+            body{font-family:spotify-circular,Helvetica,Arial,sans-serif;margin:0;}/*!sc*/
+            html,body{height:100%;}/*!sc*/
+            data-styled.g113[id="sc-global-cKDjoD1"]{content:"sc-global-cKDjoD1,"}/*!sc*/
+
+            @font-face
+            {
+                font-family:'circular-spotify-arabic';
+                src:
+                    url('https://open.scdn.co/fonts/CircularSpUIAraOnly-Light.woff2') format('woff2'),
+                    url('https://open.scdn.co/fonts/CircularSpUIAraOnly-Light.woff') format('woff'), 
+                    url('https://open.scdn.co/fonts/CircularSpUIAraOnly-Light.otf') format('opentype');
+                font-weight:200;
+                font-style:normal;
+                font-display:swap;
+            }
+            
+            :lang(ar){font-family:circular-spotify-arabic,spotify-circular,Helvetica,Arial,sans-serif;}
+
+            data-styled.g196[id="sc-global-ikQOca1"]{content:"sc-global-ikQOca1,"}/*!sc*/
+            
+            .fKGsDq
+            {
+                background-color:#2941AB;
+                background-image:url(https://www-growth.scdn.co/static/home/bursts-mobile.svg);
+                background-position:top 30% center;
+                background-repeat:no-repeat;
+                background-size:100%;
+                height:150vh;
+                text-align:center;
+                display:-webkit-box;
+                display:-webkit-flex;
+                display:-ms-flexbox;
+                display:flex;
+                -webkit-align-items:center;
+                -webkit-box-align:center;
+                -ms-flex-align:center;
+                align-items:center;
+                -webkit-flex-direction:column;
+                -ms-flex-direction:column;
+                flex-direction:column;
+                -webkit-box-pack:center;
+                -webkit-justify-content:center;
+                -ms-flex-pack:center;
+                justify-content:center;
+                overflow:hidden;
+            }
+            
+            @media (min-width:480px)
+            {
+                .fKGsDq
+                {
+                    background-image:url(https://www-growth.scdn.co/static/home/bursts-tablet.svg);
+                    background-size:153%;
+                    background-position:right 40% center;
+                    -webkit-box-pack:center;
+                    -webkit-justify-content:center;
+                    -ms-flex-pack:center;
+                    justify-content:center;
+                }
+            }/*!sc*/
+            
+            data-styled.g515[id="hero__HeroComponent-jq73fa-0"]{content:"fKGsDq,"}/*!sc*/
+            
+            .qcYsk .es-lie-copy{width:225px;}/*!sc*/
+            .qcYsk .tr-lie-copy{width:260px;}/*!sc*/
+
+            @media (min-width:480px){.qcYsk .es-lie-copy{width:350px;}.qcYsk .tr-lie-copy{width:325px;}.qcYsk .ru-lie-copy{width:300px;}}/*!sc*/
+            data-styled.g516[id="hero__HeaderContainer-jq73fa-1"]{content:"qcYsk,"}/*!sc*/
+            
+            
+            
+            .fymGQK:lang(ja){padding-bottom:12px;}/*!sc*/
+            
+            @media (min-width:480px)
+            {
+                .fymGQK
+                {
+                    width:754px;
+                    font-size:74px;
+                    line-height:104px;
+                    padding-bottom:12px;
+                }
+                .fymGQK:lang(fr),
+                .fymGQK:lang(zh_HANT){font-size:96px;}
+                .fymGQK:lang(ar){padding-bottom:16px;}
+                .fymGQK:lang(ja){padding-bottom:16px;}
+            }
+            
+            
+            .eKwOHv{padding-bottom:32px; width:212px;}/*!sc*/
+            
+            @media (min-width:480px){.eKwOHv{width:300px;font-size:18px;line-height:24px;padding-bottom:20px;}}/*!sc*/
+            
+            @media (min-width:1200px){.eKwOHv{width:700px;}}
+            
+            data-styled.g518[id="hero__LieSubCopy-jq73fa-3"]{content:"eKwOHv,"}/*!sc*/
+
+        </style>
+    </head>
+
+    <body>
+        
+            
+        <header role="banner" class="mh-header-hover mh-default-z-index svelte-1irxfym mh-fixed">
+            <div class="mh-container svelte-1irxfym">
+                
+                <div class="mh-brand-wrapper svelte-1irxfym">
+                    <a href="http://127.0.0.1:8000/" class="mh-header-primary svelte-18o1xvt">
+                        <button class="btn"><i class="fa fa-home"></i> Home</button>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <div class="hero__HeroComponent-jq73fa-0 fKGsDq encore-dark-theme">
+
+            <div class="hero__HeaderContainer-jq73fa-1 qcYsk">
+                <h2 class="Type__TypeElement-sc-9snywk-0 kKvTd hero__LieCopy-jq73fa-2 fymGQK default-lie-copy">Digit recognition</h2>
+            </div>
+            
+            <p class="Type__TypeElement-sc-9snywk-0 jOucII hero__LieSubCopy-jq73fa-3 eKwOHv">Recognize digit number in image, video and stream</p>
+            
+            <div class="hero__HeaderContainer-jq73fa-1 qcYsk">
+
+                <form method = "post" enctype="multipart/form-data" class="mh-footer-primary svelte-1ad7r0v">
+
+                    {% csrf_token %}
+
+                    <div class="Type__TypeElement-sc-9snywk-0 jOucII hero__LieSubCopy-jq73fa-3 eKwOHv">{{ form.as_p}}</div>
+                        
+                    
+                    <button type="submit" class="ButtonInner-peijbp-0 hJWOAl">UPLOAD MEDIA CONTENT</button>
+
+                </form>
+            </div>
+
+        </div>
+        
+        <footer id="mh-footer" class="mh-footer-hover svelte-13h39ov">
+            <nav class="svelte-13h39ov">
+                
+
+                <div class="mh-brand svelte-13h39ov">
+                    <a href="http://127.0.0.1:8000/" class="mh-footer-primary svelte-18o1xvt">
+                        <button class="btn"><i class="fa fa-home"></i> Home</button>
+                    </a>
+                </div>
+
+                <div class="mh-top-links svelte-13h39ov">
+
+                    <dl class="svelte-12h6dnj">
+                        
+                        <dt class="svelte-12h6dnj">Công ty</dt>
+
+                        <dd class="svelte-12h6dnj">
+                            <a href="https://www.spotify.com/vn-vi/about-us/contact/" class="mh-footer-primary svelte-12h6dnj" data-ga-category="menu" data-ga-action="about">Giới thiệu</a>
+                        </dd>
+
+                    </dl>
+
+                    <dl class="svelte-12h6dnj">
+                        <dt class="svelte-12h6dnj">Cộng đồng</dt>
+                        
+                        <dd class="svelte-12h6dnj">
+                            <a href="https://artists.spotify.com/" class="mh-footer-primary svelte-12h6dnj" data-ga-category="menu" data-ga-action="artists">Dành cho nhà phát triển</a>
+                        </dd>
+                        
+                    </dl>
+                    
+                    <dl class="svelte-12h6dnj">
+                        <dt class="svelte-12h6dnj">Việc làm</dt>
+            
+                        <dd class="svelte-12h6dnj">
+                            <a href="https://www.spotify.com/vn-vi/free/" class="mh-footer-primary svelte-12h6dnj" data-ga-category="menu" data-ga-action="free">Tuyển dụng</a>
+                        </dd>
+                    </dl>
+                </div>
+
+                <div class="mh-social-icons svelte-13h39ov">
+                    <ul class="svelte-1ad7r0v">
+
+                        <li class="svelte-1ad7r0v">
+                            <a href="https://www.facebook.com/NguynThiV4" title="Instagram" class="mh-footer-primary svelte-1ad7r0v">
+                                <span role="img" aria-label="Instagram" class="mh-social-icon-instagram svelte-1ad7r0v"></span>
+                            </a>
+                        </li>
+                        
+                        <li class="svelte-1ad7r0v">
+                            <a href="https://twitter.com/NguynThiV4" title="Twitter" class="mh-footer-primary svelte-1ad7r0v">
+                                <span role="img" aria-label="Twitter" class="mh-social-icon-twitter svelte-1ad7r0v"></span>
+                            </a>
+                        </li>
+                        
+                        <li class="svelte-1ad7r0v">
+                            <a href="https://www.facebook.com/NguynThiV4" title="Facebook" class="mh-footer-primary svelte-1ad7r0v">
+                                <span role="img" aria-label="Facebook" class="mh-social-icon-facebook svelte-1ad7r0v"></span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="mh-bottom-links svelte-13h39ov">
+                    <span class="svelte-1so9ic8">VietNam</span>
+                </div>
+
+                <div class="mh-bottom-links svelte-13h39ov">
+                    <span class="svelte-1so9ic8">© Digit recognition</span>
+                </div>
+            </nav>
+        </footer>
+            
+    </body>
+
+</html>
